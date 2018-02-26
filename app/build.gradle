@@ -5,7 +5,7 @@ android {
     compileSdkVersion gradle.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.silencedut.knowweather"
+        applicationId "com.austin.knowweather"
         minSdkVersion gradle.minSdkVersion
         targetSdkVersion gradle.targetVersion
         versionCode gradle.versionCode
@@ -59,5 +59,5 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:$gradle.room_compiler"
     annotationProcessor "android.arch.lifecycle:compiler:$gradle.lifecycle_compiler"
 
-
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
 }
