@@ -15,8 +15,8 @@ import com.silencedut.setting.R;
 import com.silencedut.setting.R2;
 import com.silencedut.weather_core.Version;
 import com.silencedut.weather_core.corebase.BaseActivity;
-import com.tencent.bugly.beta.Beta;
-import com.tencent.bugly.beta.UpgradeInfo;
+//import com.tencent.bugly.beta.Beta;
+//import com.tencent.bugly.beta.UpgradeInfo;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -65,8 +65,8 @@ public class AboutActivity extends BaseActivity {
     }
 
     private void loadUpgradeInfo() {
-
         /***** 获取升级信息 *****/
+        /*
         UpgradeInfo upgradeInfo = Beta.getUpgradeInfo();
 
         if (upgradeInfo == null) {
@@ -78,7 +78,7 @@ public class AboutActivity extends BaseActivity {
             mNewVersion.setText("有新版本更新");
             mNewVersionTip.setVisibility(View.VISIBLE);
         }
-
+        */
     }
 
     @Override
@@ -100,9 +100,7 @@ public class AboutActivity extends BaseActivity {
 
         } else if (i == R.id.update_version) {
             if (mNewVersionTip.getVisibility() == View.VISIBLE) {
-
-                Beta.checkUpgrade();
-
+                //Beta.checkUpgrade();
             } else {
                 Toast.makeText(this, "已是最新版本", Toast.LENGTH_SHORT).show();
             }

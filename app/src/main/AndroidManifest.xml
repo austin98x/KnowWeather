@@ -85,10 +85,10 @@
         <!--</activity>-->
 
         <!-- Beta弹窗必须的activity -->
-        <activity
-            android:name="com.tencent.bugly.beta.ui.BetaActivity"
-            android:theme="@android:style/Theme.Translucent">
-        </activity>
+        <!--<activity-->
+            <!--android:name="com.tencent.bugly.beta.ui.BetaActivity"-->
+            <!--android:theme="@android:style/Theme.Translucent">-->
+        <!--</activity>-->
 
         <service
             android:name="com.amap.api.location.APSService">
@@ -99,10 +99,10 @@
             android:value="d4cfc1d729097577433b40b3b4f8e264">
         </meta-data>
 
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="582d54724ad1567cbc001e54">
-        </meta-data>
+        <!--<meta-data-->
+            <!--android:name="UMENG_APPKEY"-->
+            <!--android:value="582d54724ad1567cbc001e54">-->
+        <!--</meta-data>-->
 
     </application>
 

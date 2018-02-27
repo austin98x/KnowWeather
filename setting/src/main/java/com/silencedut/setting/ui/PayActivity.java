@@ -9,10 +9,10 @@ import android.widget.Toast;
 import com.silencedut.setting.R;
 import com.silencedut.setting.R2;
 import com.silencedut.weather_core.corebase.BaseActivity;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.media.UMImage;
+//import com.umeng.socialize.ShareAction;
+//import com.umeng.socialize.UMShareListener;
+//import com.umeng.socialize.bean.SHARE_MEDIA;
+//import com.umeng.socialize.media.UMImage;
 
 import butterknife.BindView;
 import butterknife.OnLongClick;
@@ -46,6 +46,7 @@ public class PayActivity extends BaseActivity {
 
     @OnLongClick(R2.id.pay_qrcode)
     boolean onShareToWeChat() {
+        /*
         ShareAction shareAction = new ShareAction(this).setPlatform(SHARE_MEDIA.WEIXIN).withTitle(getString(R.string.thanks));
 
         final UMImage umImage = new UMImage(this, R.mipmap.setting_wechat_pay);
@@ -74,6 +75,8 @@ public class PayActivity extends BaseActivity {
             }
         });
         shareAction.share();
+        */
+
         return true;
     }
 

@@ -37,17 +37,17 @@ dependencies {
     api ("com.jakewharton:butterknife:$gradle.butterknife")
 
     api "com.github.promeg:tinypinyin:$gradle.tinypinyin"
-    api "com.facebook.stetho:stetho:$gradle.stetho"
+    //api "com.facebook.stetho:stetho:$gradle.stetho"
     api "uk.co.chrisjenx:calligraphy:$gradle.calligraphy"
     api "com.github.SilenceDut:TaskScheduler:$gradle.taskscheduler"
     api "com.squareup.retrofit2:retrofit:$gradle.retrofit2"
     api "com.squareup.retrofit2:converter-gson:$gradle.retrofit2"
 
 
-    debugApi "com.squareup.leakcanary:leakcanary-android:$gradle.leakcanary"
-    releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:$gradle.leakcanary"
+    //debugApi "com.squareup.leakcanary:leakcanary-android:$gradle.leakcanary"
+    //releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:$gradle.leakcanary"
 
-    api "com.tencent.bugly:crashreport_upgrade:$gradle.bugly_crashreport_upgrade"
+    //api "com.tencent.bugly:crashreport_upgrade:$gradle.bugly_crashreport_upgrade"
     api "com.github.SilenceDut:ExpandableLayout:$gradle.expandableLayout"
     api "com.silencedut:router:$gradle.silencedut_router"
     annotationProcessor "com.silencedut:router-compiler:$gradle.silencedut_router_compiler"

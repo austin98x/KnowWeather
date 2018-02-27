@@ -12,10 +12,10 @@ import com.silencedut.baselib.commonhelper.adapter.BaseViewHolder;
 import com.silencedut.baselib.commonhelper.utils.UIUtil;
 import com.silencedut.weather_core.R;
 import com.silencedut.weather_core.R2;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.media.UMImage;
+//import com.umeng.socialize.ShareAction;
+//import com.umeng.socialize.UMShareListener;
+//import com.umeng.socialize.bean.SHARE_MEDIA;
+//import com.umeng.socialize.media.UMImage;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -34,8 +34,8 @@ public class ShareHolder extends BaseViewHolder<ShareData> {
     private ShareData mShareData;
 
     public static final int[] SHARE_ICONS = {R.mipmap.core_share_weixin, R.mipmap.core_share_moments, R.mipmap.core_share_qq, R.mipmap.core_share_kongjian};
-    private static final String[] TIPS = {"微信", "朋友圈", "QQ", "QQ空间"};
-    private static final SHARE_MEDIA[] SHAREMEDIAS = {SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE};
+    //private static final String[] TIPS = {"微信", "朋友圈", "QQ", "QQ空间"};
+    //private static final SHARE_MEDIA[] SHAREMEDIAS = {SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE};
 
     public ShareHolder(View itemView, BaseRecyclerAdapter baseRecyclerAdapter) {
         super(itemView, baseRecyclerAdapter);
@@ -45,8 +45,8 @@ public class ShareHolder extends BaseViewHolder<ShareData> {
     @Override
     public void updateItem(ShareData data, int position) {
         mShareData = data;
-        mShareIcon.setImageResource(SHARE_ICONS[position]);
-        mShareTip.setText(TIPS[position]);
+        //mShareIcon.setImageResource(SHARE_ICONS[position]);
+        //mShareTip.setText(TIPS[position]);
         mPosition = position;
     }
 
@@ -57,6 +57,7 @@ public class ShareHolder extends BaseViewHolder<ShareData> {
 
     @OnClick(R2.id.share_container)
     public void onClick() {
+        /*
         final UMImage umImage;
         Bitmap screenBitmap = null;
         String titleStr = getContext().getResources().getString(R.string.core_share_title);
@@ -108,5 +109,6 @@ public class ShareHolder extends BaseViewHolder<ShareData> {
         });
         shareAction.share();
         mShareData.mShareDialog.dismiss();
+        */
     }
 }

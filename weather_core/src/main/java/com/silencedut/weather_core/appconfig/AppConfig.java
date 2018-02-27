@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 
-import com.facebook.stetho.Stetho;
+//import com.facebook.stetho.Stetho;
 import com.silencedut.baselib.commonhelper.log.LogHelper;
 import com.silencedut.baselib.commonhelper.persistence.FileHelper;
 import com.silencedut.baselib.commonhelper.persistence.PreferencesHelper;
@@ -12,19 +12,19 @@ import com.silencedut.taskscheduler.TaskScheduler;
 import com.silencedut.weather_core.BuildConfig;
 import com.silencedut.weather_core.CoreManager;
 import com.silencedut.weather_core.R;
-import com.squareup.leakcanary.LeakCanary;
-import com.tencent.bugly.Bugly;
-import com.tencent.bugly.beta.Beta;
-import com.umeng.socialize.PlatformConfig;
-import com.umeng.socialize.UMShareAPI;
+//import com.squareup.leakcanary.LeakCanary;
+//import com.tencent.bugly.Bugly;
+//import com.tencent.bugly.beta.Beta;
+//import com.umeng.socialize.PlatformConfig;
+//import com.umeng.socialize.UMShareAPI;
 
 /**
  * Created by SilenceDut on 2018/1/1 .
  */
 
 public class AppConfig {
-    private static final String APP_NAME = "knowweather";
-    private static final String BUGLY_APPID = "d29f7bc148";
+    private static final String APP_NAME = "mimiknowweather";
+    //private static final String BUGLY_APPID = "d29f7bc148";
 
     public static void initialize(Application context) {
         initANRWatch(context);
@@ -36,6 +36,7 @@ public class AppConfig {
     }
 
     private static void workThreadInit(final Context context) {
+        /*
         TaskScheduler.execute(new Runnable() {
             @Override
             public void run() {
@@ -44,10 +45,12 @@ public class AppConfig {
                 UMShareAPI.get(context);
             }
         });
+        */
     }
 
 
     private static void initCrashReport(Context context) {
+        /*
         Beta.autoInit = true;
         Beta.autoCheckUpgrade = true;
         Beta.initDelay = 3 * 1000;
@@ -56,15 +59,18 @@ public class AppConfig {
         Beta.defaultBannerId = R.mipmap.core_icon;
         Beta.storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         Bugly.init(context, BUGLY_APPID, BuildConfig.DEBUG);
+        */
     }
 
 
 
     private static void initANRWatch(Application context) {
+        /*
         if (BuildConfig.DEBUG) {
             Stetho.initializeWithDefaults(context);
             LeakCanary.install(context);
         }
+        */
     }
 
     /**
