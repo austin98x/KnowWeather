@@ -24,13 +24,34 @@ android {
         }
 
         resourcePrefix "weather"
+    }
 
+    signingConfigs {
+        release {
+            /*
+            To set this properties, create file gradle.properties with these 3 props.
+            e.g.
+            keyStoreFile=/home/<username>/.android/debug.keystore
+            storealias=androiddebugkey
+            storepwd=android
+            */
+            storeFile file(keyStoreFile)
+            keyAlias storealias
+            if (System.getenv('PASSWORD_KEYSTORE') != null && !System.getenv('PASSWORD_KEYSTORE').isEmpty()) {
+                storePassword = System.getenv('PASSWORD_KEYSTORE')
+                keyPassword = System.getenv('PASSWORD_KEYSTORE')
+            } else {
+                storePassword storepwd
+                keyPassword storepwd
+            }
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig = signingConfigs.release
         }
     }
 
