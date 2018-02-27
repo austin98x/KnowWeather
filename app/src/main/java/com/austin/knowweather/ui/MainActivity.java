@@ -150,8 +150,6 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
 
         mSucceedAnimator = ofFloat(mPostTimeTv, "scaleX", 1, 0, 1).setDuration(POSTTIME_DURATION);
         mSucceedAnimator.setStartDelay(ROTATION_DURATION);
-
-
     }
 
     @Override
@@ -335,6 +333,12 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.weather_menu_main, menu);
+
+        for (int i = 0; i < menu.size() - 1; i++){
+            menu.getItem(i).setVisible(false);
+            menu.getItem(i).setEnabled(false);
+        }
+
         return true;
     }
 

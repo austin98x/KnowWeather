@@ -100,9 +100,9 @@ public class SettingFragment extends BaseFragment {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
-                    if (which == 0) {
-                        Toast.makeText(getContext(), R.string.follow_system_warn, Toast.LENGTH_LONG).show();
-                    }
+//                    if (which == 0) {
+//                        Toast.makeText(getContext(), R.string.follow_system_warn, Toast.LENGTH_LONG).show();
+//                    }
                     PreferencesHelper.put(ResourceProvider.NOTIFICATION_THEME, which);
                     mNotificationTheme.setText(ResourceProvider.getNotificationName(which));
                     Router.instance().getReceiver(EventCenter.NotificationStatus.class).onUpdateNotification();

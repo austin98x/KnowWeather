@@ -58,6 +58,8 @@ public class AboutActivity extends BaseActivity {
         getSupportActionBar().setTitle(R.string.about);
 
         mVersion.setText(mVersion.getText() + Version.getVersionName(this));
+        mNewVersion.setVisibility(View.GONE);
+        mNewVersionTip.setVisibility(View.GONE);
 
         loadUpgradeInfo();
     }

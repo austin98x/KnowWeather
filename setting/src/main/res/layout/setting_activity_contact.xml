@@ -24,23 +24,23 @@
         android:orientation="vertical"
         >
 
-        <TextView
-            style="@style/core_SettingTextStyle"
-            android:drawableLeft="@mipmap/setting_github"
-            android:drawablePadding="@dimen/common_dimen"
-            android:text="SilenceDut"
-            />
+        <!--<TextView-->
+            <!--style="@style/core_SettingTextStyle"-->
+            <!--android:drawableLeft="@mipmap/setting_github"-->
+            <!--android:drawablePadding="@dimen/common_dimen"-->
+            <!--android:text="SilenceDut"-->
+            <!--/>-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/divider_height"
-            android:background="@color/dividers_black"/>
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/divider_height"-->
+            <!--android:background="@color/dividers_black"/>-->
 
         <TextView
             style="@style/core_SettingTextStyle"
             android:drawableLeft="@mipmap/setting_contact_qq"
             android:drawablePadding="@dimen/common_dimen"
-            android:text="3026354251"
+            android:text="715144874"
             />
 
         <View
@@ -52,7 +52,7 @@
             style="@style/core_SettingTextStyle"
             android:drawableLeft="@mipmap/setting_email"
             android:drawablePadding="@dimen/common_dimen"
-            android:text="silencedutchman@foxmail.com"
+            android:text="wcfds@sina.com"
             />
 
     </LinearLayout>
