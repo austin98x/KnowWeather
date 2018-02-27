@@ -68,7 +68,6 @@ public class WeatherModel extends BaseViewModel implements LocationNotification 
         return mGetWeatherStatus;
     }
 
-
     void updateWeather() {
         if(CoreManager.getImpl(ICityProvider.class).hadCurrentCityId()) {
             CoreManager.getImpl(IFetchWeather.class).queryWeather(CoreManager.getImpl(ICityProvider.class).getCurrentCityId());
@@ -80,29 +79,37 @@ public class WeatherModel extends BaseViewModel implements LocationNotification 
                 .equals(CoreManager.getImpl(ILocationApi.class).getLocatedCityId());
     }
 
-
-
     private void parseWeather(WeatherData weatherData) {
 
-        mWeatherBaseData= weatherData.getBasic();
+        if (weatherData == null)
+            return;
+
+        if (weatherData.getBasic() != null)
+            mWeatherBaseData = weatherData.getBasic();
 
         List<HoursForecastData> hoursForecastDatas = new ArrayList<>();
-        for (WeatherData.HoursForecastEntity hoursForecastEntity : weatherData.getHoursForecast()) {
-            hoursForecastDatas.add(new HoursForecastData(hoursForecastEntity));
+        if (weatherData.getHoursForecast() != null) {
+            for (WeatherData.HoursForecastEntity hoursForecastEntity : weatherData.getHoursForecast()) {
+                hoursForecastDatas.add(new HoursForecastData(hoursForecastEntity));
+            }
         }
-        mHoursDatas = hoursForecastDatas ;
+        mHoursDatas = hoursForecastDatas;
 
-        mAqiData = new AqiData(weatherData.getAqi());
+        if (weatherData.getAqi() != null)
+            mAqiData = new AqiData(weatherData.getAqi());
 
         List<DailyWeatherData> dailyWeatherDatas = new ArrayList<>();
-        List<WeatherData.DailyForecastEntity> dailyForecastEntities = weatherData.getDailyForecast();
-        for (int count = 0; count < dailyForecastEntities.size() - 2; count++) {
-            // only take 5 days weather
-            dailyWeatherDatas.add(new DailyWeatherData(dailyForecastEntities.get(count)));
+        if (weatherData.getDailyForecast() != null) {
+            List<WeatherData.DailyForecastEntity> dailyForecastEntities = weatherData.getDailyForecast();
+            for (int count = 0; count < dailyForecastEntities.size() - 2; count++) {
+                // only take 5 days weather
+                dailyWeatherDatas.add(new DailyWeatherData(dailyForecastEntities.get(count)));
+            }
         }
         mDailyData = dailyWeatherDatas;
 
-        mLifeIndexData = new LifeIndexData(weatherData.getLifeIndex());
+        if (weatherData.getLifeIndex() != null)
+            mLifeIndexData = new LifeIndexData(weatherData.getLifeIndex());
     }
 
     WeatherData.BasicEntity getWeatherBaseData() {

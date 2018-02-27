@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 
 public interface NetWeatherApi {
 
-    String sHeyWeatherKey = "7e0c26e74f384de59efb7a86565a1c0f";
+    String sHeyWeatherKey = "324d477863ac47a79ee50ec78f3f685b";
 
     @GET("weather")
     Call<HeWeather> getWeather(@Query("key") String key, @Query("location") String location);

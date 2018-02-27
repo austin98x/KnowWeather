@@ -57,7 +57,7 @@ public class LifeIndexesHolder extends BaseViewHolder<LifeIndexData> implements 
     @Override
     public void updateItem(LifeIndexData lifeIndexData, int position) {
         List<WeatherData.LifeIndexEntity> lifeIndexesData = lifeIndexData.lifeIndexesData;
-        if (Check.isNull(lifeIndexData)) {
+        if (Check.isNull(lifeIndexData) || Check.isNull(lifeIndexesData)) {
             return;
         }
         try {

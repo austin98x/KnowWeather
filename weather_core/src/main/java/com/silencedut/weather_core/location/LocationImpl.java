@@ -11,6 +11,8 @@ import com.silencedut.weather_core.CoreManager;
 import com.silencedut.weather_core.api.cityprovider.City;
 import com.silencedut.weather_core.api.cityprovider.ICityProvider;
 
+import static com.amap.api.location.AMapLocation.LOCATION_SUCCESS;
+
 
 /**
  * Created by SilenceDut on 2018/1/8 .
@@ -46,24 +48,26 @@ public class LocationImpl implements ILocationApi {
                         public void run() {
                             boolean locationSucceed = false;
                             try {
-                                String city = aMapLocation.getCity().substring(0,2);
-                                String district = aMapLocation.getDistrict().substring(0, 2);
-
-                                mLocatedCity = CoreManager.getImpl(ICityProvider.class).searchCity(city,district);
-
-                                //城市库全名不匹配
-                                if (mLocatedCity == null) {
-                                    city = city.substring(0,2);
-                                    district = district.substring(0,2);
+                                if (aMapLocation.getErrorCode() == LOCATION_SUCCESS) {
+                                    String city = aMapLocation.getCity().substring(0,2);
+                                    String district = aMapLocation.getDistrict().substring(0, 2);
                                     mLocatedCity = CoreManager.getImpl(ICityProvider.class).searchCity(city,district);
 
-                                }
+                                    //城市库全名不匹配
+                                    if (mLocatedCity == null) {
+                                        city = city.substring(0,2);
+                                        district = district.substring(0,2);
+                                        mLocatedCity = CoreManager.getImpl(ICityProvider.class).searchCity(city,district);
+                                    }
 
-                                locationSucceed = mLocatedCity != null;
+                                    locationSucceed = mLocatedCity != null;
 
-                                if(locationSucceed) {
-                                    mLocatedCity.latitude = String.valueOf(aMapLocation.getLatitude());
-                                    mLocatedCity.longitude = String.valueOf(aMapLocation.getLongitude());
+                                    if(locationSucceed) {
+                                        mLocatedCity.latitude = String.valueOf(aMapLocation.getLatitude());
+                                        mLocatedCity.longitude = String.valueOf(aMapLocation.getLongitude());
+                                    }
+                                } else {
+                                    LogHelper.error(TAG,"location fail!");
                                 }
                             }catch (Exception e) {
                                 LogHelper.error(TAG,"location error %s",e);
@@ -73,8 +77,6 @@ public class LocationImpl implements ILocationApi {
                                     .onLocation(locationSucceed, locationSucceed ?mLocatedCity.cityId:"");
 
                             LogHelper.info(TAG,"located city %s",mLocatedCity);
-
-
                         }
                     });
 

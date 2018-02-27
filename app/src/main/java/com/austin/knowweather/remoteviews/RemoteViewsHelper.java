@@ -148,8 +148,6 @@ public class RemoteViewsHelper {
 
     private static RemoteViews getNotificationContentView(Context context) {
 
-
-
         int themeId = ResourceProvider.getNotificationThemeId(PreferencesHelper.get(ResourceProvider.NOTIFICATION_THEME, 1));
 
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), themeId);
@@ -161,10 +159,9 @@ public class RemoteViewsHelper {
 
         WeatherData weatherData = WeatherRepository.getInstance().getCachedWeatherData();
 
-        if(weatherData == null) {
+        if(weatherData == null || weatherData.getBasic() == null) {
             return remoteViews;
         }
-
 
         WeatherData.BasicEntity basic = weatherData.getBasic();
         remoteViews.setTextViewText(R.id.weather_temp, basic.getTemp());
@@ -172,7 +169,6 @@ public class RemoteViewsHelper {
         remoteViews.setTextViewText(R.id.city, basic.getCity());
         remoteViews.setTextViewText(R.id.post_time, TimeUtil.getHourMinute() + " 更新");
         remoteViews.setImageViewResource(R.id.weather_icon, ResourceProvider.getIconId(basic.getWeather()));
-
 
         Intent updateIntent = new Intent(WeatherWidgetProvider.UPDATE_ACTION);
         context.sendBroadcast(updateIntent);

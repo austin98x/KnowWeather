@@ -69,7 +69,7 @@ public class FollowedCityHolder extends BaseViewHolder<FollowedCityData> {
 
     @Override
     public void updateItem(FollowedCityData data, int position) {
-        if (data == null) {
+        if (data == null || data.cityId == null) {
             return;
         }
 

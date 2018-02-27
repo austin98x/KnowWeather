@@ -24,7 +24,7 @@ public class FollowedCityData implements BaseAdapterData {
     }
 
     public void update(WeatherData weatherData) {
-        if (weatherData != null) {
+        if (weatherData != null && weatherData.getBasic() != null) {
             this.cityId = weatherData.getCityId();
             this.cityName = weatherData.getBasic().getCity();
             this.temp = weatherData.getBasic().getTemp();

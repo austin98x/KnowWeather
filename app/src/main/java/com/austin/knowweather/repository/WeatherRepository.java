@@ -89,6 +89,8 @@ public class WeatherRepository  {
             try {
                 WeatherData weatherData = statusDataResource.data;
                 Weather weather = new Weather();
+                if (weatherData.getCityId() == null)
+                    return;
                 weather.cityId = weatherData.getCityId();
                 weather.weatherJson = JsonHelper.toJson(weatherData);
 
