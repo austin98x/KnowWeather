@@ -23,7 +23,7 @@ android {
             }
         }
 
-        resourcePrefix "weather"
+        //resourcePrefix "weather"
     }
 
     signingConfigs {

@@ -41,8 +41,8 @@ dependencies {
     api "uk.co.chrisjenx:calligraphy:$gradle.calligraphy"
     api "com.github.SilenceDut:TaskScheduler:$gradle.taskscheduler"
     api "com.squareup.retrofit2:retrofit:$gradle.retrofit2"
-    api "com.squareup.retrofit2:converter-gson:$gradle.retrofit2"
-
+    //api "com.squareup.retrofit2:converter-gson:$gradle.retrofit2"
+    compile('com.squareup.retrofit2:converter-gson:2.1.0') { exclude group: 'com.google.code.gson' }
 
     //debugApi "com.squareup.leakcanary:leakcanary-android:$gradle.leakcanary"
     //releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:$gradle.leakcanary"
@@ -52,15 +52,18 @@ dependencies {
     api "com.silencedut:router:$gradle.silencedut_router"
     annotationProcessor "com.silencedut:router-compiler:$gradle.silencedut_router_compiler"
 
-
     // ViewModel and LiveData
     api "android.arch.lifecycle:extensions:$gradle.lifecycle_extensions"
-
 
     // Room
     api "android.arch.persistence.room:runtime:$gradle.room_runtime"
 
     // implementation library , can only be used in current module ,using JsonHelper
-    implementation "com.google.code.gson:gson:$gradle.gson"
+    //implementation "com.google.code.gson:gson:$gradle.gson"
 
+    // MiAd SDK
+    compile files('libs/MimoSdk.jar')
+
+    // MiStats SDK
+    compile files('libs/MiStats_SDK_Client.jar')
 }
