@@ -7,13 +7,21 @@
     <string name="update_allow">自动更新天气</string>
     <string name="update_schedule">0.5小时</string>
 
-
-
     <string name="about">关于</string>
     <string name="contact">联系方式</string>
     <string name="update_app">检查更新</string>
 
     <string name="thanks">感谢您的支持</string>
+
+    <string name="mail_send_to">mailto:wcfds@sina.com</string>
+    <string name="mail_topic">米米知天气使用反馈与建议</string>
+    <string name="device_model">设备型号：</string>
+    <string name="sdk_version">SDK版本：</string>
+    <string name="no_mail_app">没有安装邮件类应用</string>
+    <string name="share_title">分享一款不错的天气预报软件[米米知天气]</string>
+    <string name="share_content">米米知天气，轻松知天气！下载地址：</string>
+    <string name="share_url">https://fir.im/msgq</string>
+    <string name="not_find_app">未找到相关应用</string>
 
     <string name="explain">为保证『米米知天气』的持续运营，您可以通过微信付款来支持开发者继续优化应用，
         金额大小根据您的心情。\n\n可以用微信直接扫描二维码，然后识别二维码支付。\n\n感谢您的支持！</string>

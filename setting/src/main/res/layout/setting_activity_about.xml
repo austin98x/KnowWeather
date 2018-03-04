@@ -51,6 +51,8 @@
         <TextView
             android:id="@+id/mark"
             style="@style/core_SettingTextStyle"
+            android:drawableLeft="@mipmap/setting_icon"
+            android:drawablePadding="10dp"
             android:text="给个好评"
             />
 
@@ -62,6 +64,8 @@
         <TextView
             android:id="@+id/suggestion"
             style="@style/core_SettingTextStyle"
+            android:drawableLeft="@mipmap/setting_email"
+            android:drawablePadding="10dp"
             android:text="问题反馈"
             />
 
@@ -101,9 +105,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/common_dimen"
-            android:background="@color/dark_background"
-            />
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/dividers_black"/>
 
         <TextView
             android:id="@+id/pay"
@@ -111,6 +114,19 @@
             android:drawableLeft="@mipmap/setting_pay"
             android:drawablePadding="@dimen/common_dimen"
             android:text="支持开发者"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/dividers_black"/>
+
+        <TextView
+            android:id="@+id/share"
+            style="@style/core_SettingTextStyle"
+            android:drawableLeft="@mipmap/setting_user_contact"
+            android:drawablePadding="10dp"
+            android:text="分享应用"
             />
 
     </LinearLayout>

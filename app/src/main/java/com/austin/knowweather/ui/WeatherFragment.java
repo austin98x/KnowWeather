@@ -25,6 +25,7 @@ import com.austin.knowweather.ui.adapter.LifeIndexesHolder;
 import com.silencedut.weather_core.corebase.BaseFragment;
 import com.silencedut.weather_core.corebase.StatusDataResource;
 import com.silencedut.weather_core.viewmodel.ModelProvider;
+import com.xiaomi.mistatistic.sdk.MiStatInterface;
 
 import java.util.List;
 
@@ -115,5 +116,17 @@ public class WeatherFragment extends BaseFragment {
         }
 
         mWeatherItemList.setAdapter(mMoreInfoAdapter);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MiStatInterface.recordPageStart(getActivity(), "Weather Page");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MiStatInterface.recordPageEnd();
     }
 }
