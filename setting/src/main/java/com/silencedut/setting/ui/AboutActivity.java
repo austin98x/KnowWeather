@@ -129,7 +129,7 @@ public class AboutActivity extends BaseActivity {
             intent.putExtra(Intent.EXTRA_TEXT,
                     getString(R.string.device_model) + Build.MODEL + " \n"
                             + getString(R.string.sdk_version) + Build.VERSION.RELEASE + " \n"
-                            + "Version: " + BuildConfig.VERSION_NAME);
+                            + "版本：" + BuildConfig.VERSION_NAME);
             startActivity(intent);
         } catch (android.content.ActivityNotFoundException ex){
             Toast.makeText(this, R.string.no_mail_app, Toast.LENGTH_SHORT).show();

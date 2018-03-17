@@ -31,7 +31,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
-        android:background="@mipmap/core_icon"/>
+        android:background="@mipmap/ic_launcher"/>
 
     <ImageView
         android:layout_width="70dp"
@@ -139,7 +139,7 @@
         android:layout_marginBottom="@dimen/common_dimen_huge"
         android:layout_marginTop="@dimen/common_dimen_huge"
         android:gravity="bottom"
-        android:text="Version "
+        android:text="版本："
         android:textColor="@color/main_text_black"
         />
 

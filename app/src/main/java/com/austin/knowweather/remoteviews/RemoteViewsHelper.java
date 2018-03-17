@@ -112,7 +112,7 @@ public class RemoteViewsHelper {
 
         WeatherData.AlarmsEntity alarmsEntity = weatherData.getAlarms().get(0);
 
-        Notification notification = new NotificationCompat.Builder(context).setOngoing(false).setPriority(NotificationCompat.PRIORITY_MAX).setContentTitle(alarmsEntity.getAlarmTypeDesc()).setContentText(alarmsEntity.getAlarmDesc()).setSmallIcon(R.mipmap.core_icon).build();
+        Notification notification = new NotificationCompat.Builder(context).setOngoing(false).setPriority(NotificationCompat.PRIORITY_MAX).setContentTitle(alarmsEntity.getAlarmTypeDesc()).setContentText(alarmsEntity.getAlarmDesc()).setSmallIcon(R.mipmap.ic_launcher).build();
 
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(NOTICE_ID_TYPE_ALARM, notification);
@@ -129,9 +129,9 @@ public class RemoteViewsHelper {
                 .setPriority(NotificationCompat.PRIORITY_MAX).setOngoing(true);
 
         if (Version.buildVersion() >= Build.VERSION_CODES.LOLLIPOP) {
-            builder.setSmallIcon(R.mipmap.weather_small_icon);
+            builder.setSmallIcon(R.mipmap.ic_launcher);
         } else {
-            builder.setSmallIcon(R.mipmap.core_icon);
+            builder.setSmallIcon(R.mipmap.ic_launcher);
         }
 
 

@@ -69,7 +69,7 @@ public class WeatherFetchImpl implements IFetchWeather {
                     if(heWeatherResponse.isSuccessful()) {
                         WeatherData weatherData = WeatherTransverter.convertFromHeWeather(heWeatherResponse.body(),aqiEntityResponse.body());
                         WeatherRepository.getInstance().updateWeather(cityId,StatusDataResource.success(weatherData));
-                    }else {
+                    } else {
                         LogHelper.error(TAG, "fetchWeather fail,response is %s",heWeatherResponse.errorBody());
                         WeatherRepository.getInstance().updateWeather(cityId,StatusDataResource.<WeatherData>error(heWeatherResponse.errorBody().string()));
                     }

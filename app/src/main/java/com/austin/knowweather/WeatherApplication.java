@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.silencedut.weather_core.CoreManager;
 
-import com.miui.zeus.mimo.sdk.MimoSdk;
+//import com.miui.zeus.mimo.sdk.MimoSdk;
 
 import com.xiaomi.mistatistic.sdk.MiStatInterface;
 import com.xiaomi.mistatistic.sdk.URLStatsRecorder;
@@ -32,12 +32,14 @@ public class WeatherApplication extends Application {
         CoreManager.init(this);
 
         // MiAd SDK
+        /*
         boolean isReady = MimoSdk.isSdkReady();
         MimoSdk.setEnableUpdate(false);
         MimoSdk.init(this, APP_ID, APP_KEY, APP_TOKEN);
         //MimoSdk.setDebugOn();
         //MimoSdk.setStageOn();
         Log.d("MI_AD", "mi ad sdk init finish.");
+        */
 
         // MiStats SDk
         MiStatInterface.initialize(this.getApplicationContext(), APP_ID, APP_KEY, "default channel");

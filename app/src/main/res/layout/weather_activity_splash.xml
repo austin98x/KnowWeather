@@ -35,7 +35,7 @@
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@mipmap/core_icon"
+            android:src="@mipmap/ic_launcher"
             />
         <ImageView
             android:layout_marginLeft="@dimen/common_dimen_tiny"

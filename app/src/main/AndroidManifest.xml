@@ -35,7 +35,8 @@
     <application
         android:name=".WeatherApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/core_icon"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/core_BaseAppTheme">
@@ -119,11 +120,11 @@
         <!--</meta-data>-->
 
         <!-- MiAd SDK -->
-        <activity
-            android:name="com.miui.zeus.mimo.sdk.activityProxy.ProxyActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
+        <!--<activity-->
+            <!--android:name="com.miui.zeus.mimo.sdk.activityProxy.ProxyActivity"-->
+            <!--android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+            <!--android:exported="false"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>-->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
